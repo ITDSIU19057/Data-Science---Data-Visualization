@@ -1,9 +1,4 @@
 /* ---------------------------------------------- */
-/*            CODE EXPLAINED TUTORIALS            */
-/*         www.youtube.com/CodeExplained          */
-/* ---------------------------------------------- */
-
-/* ---------------------------------------------- */
 /*                  LOAD FONTS                    */
 /* ---------------------------------------------- */
 @font-face{
@@ -51,7 +46,7 @@ header{
 
     margin: 0 auto;
 
-    background-color: #ffffff;
+    background-color: #d8e4f5;
 }
 /* -------- LOGO -------- */
 .logo{
@@ -74,7 +69,8 @@ footer{
     height: 50px;
 
     margin: 0 auto;
-     background-color: rgba(218, 226, 250, 0.9); 
+     background-color: rgba(218, 226, 250, 0.9);  
+     
 
 }
 
@@ -86,9 +82,9 @@ footer{
 
 
 .copyright{
-    height: 83%;
+    height: 50%;
     display: flex;
-    font-size: 10px;
+    font-size: 2px;
     flex-direction: column;
     justify-content: center;
 
@@ -113,13 +109,13 @@ main{
 }
 /* -------- LATEST REPORT -------- */
 .latest-report{
-    display: contents;
+    display:flex;
     justify-content: space-between;
     align-items: center;
-
-    width: 80%;
-    height: 50%;
-    margin: 10;
+    
+    width: 70%;
+    height: 30%;
+    margin-left: 100px;
     padding-top: 10px;
 
     color: rgb(0, 0, 0);
@@ -134,7 +130,7 @@ main{
 
 .name{
     font-size: 2.2em;
-    color: #0547fc;
+    color: #092779;
     font-weight: bold;
 }
 
@@ -142,13 +138,13 @@ main{
     cursor: pointer;
     background-color: #f7f7f7;  
     margin-top: 25px; 
-    margin-left: 8px;
+    margin-left: 200px;
     border-style: groove;
     
     padding-inline-start: 30px; 
     position:absolute;
     width: 800px;
-    height: 50px;
+    height: 30px;
 }
 
 .title{
@@ -157,21 +153,21 @@ main{
 .total-cases .value{
     font-size: 2em;
     font-weight: bold;
-    color:#0d42f0
+    color:#10319e
 }
 .recovered .value{
     font-size: 2em;
     font-weight: bold;
-    color: #A7FF33;
+    color: #0a7919;
 }
 .deaths .value{
     font-size: 2em;
     font-weight: bold;
-    color: #f44336;
+    color: #88140c;
 }
 .new-value{
     font-size: 1.0em; 
-    color: rgb(15, 177, 0);
+    color: rgb(171, 15, 185);
 }
 /* -------- CHART -------- */
 .chart{
@@ -185,7 +181,8 @@ main{
 /* -------- SEARCH COUNTRY -------- */
 .search-country{
     position: relative;
-    top: 10px;
+    top: 30px;
+    left: 10px;
     color: royalblue; 
 }
 .search-box{
@@ -194,8 +191,8 @@ main{
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    width: 812px;
+    margin-left: 190px;
+    width: 797px;
     height: 30px;
 
     background-color: rgb(199, 199, 199);
@@ -203,7 +200,7 @@ main{
     z-index: 1;
 }
 .search-box input{
-    width: 800px;
+    width: 750px;
     height: 25px;
 
     border: none;
@@ -211,7 +208,7 @@ main{
     background-color: transparent;
     color: rgb(0, 0, 0);
 
-    padding-left: 15px;
+    padding-left: 10px;
 
     font-size: 1.1em;
 }
@@ -226,11 +223,11 @@ main{
 
     position: absolute;
     top: 30px;
-
-    width: 812px;
+    margin-left: 190px;
+    width: 793px;
     height: 300px;
 
-    background-color: rgb(248, 248, 248);
+    background-color: rgb(255, 249, 249);
     opacity: 0.9;
 
     overflow-y: scroll;
@@ -271,7 +268,7 @@ main{
   }
 
 /* ---------------------------------------------- */
-/*             SCREEN WIDTH < 600px               */
+/*             SCREEN WIDTH              */
 /* ---------------------------------------------- */
 @media screen and (max-width: 1400px){
     .latest-report{
