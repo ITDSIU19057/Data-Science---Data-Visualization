@@ -9,3 +9,7 @@ Our page have 4 tabs:
 - Data StoryTelling: This page show how rapidly spread of Covid - 19 that make this disease become one of the most dangerous pandemics in the history 
 - Line Chart: This page show more detail about several numbers and the trend line for each of countries in the world 
 - Data Overview: This page show the overview on whole world 
+
+Data Collection:
+- World Maps, Line Chart, Data Overview: Take from https://disease.sh/
+- Data StoryTelling: 5 json files above
