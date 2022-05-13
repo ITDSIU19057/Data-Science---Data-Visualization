@@ -31,9 +31,13 @@
                 onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i> Close Menu</a>
             <a href="covid-map.html" class="w3-bar-item w3-button w3-padding w3-hover-teal"><i
                     class="fas fa-globe-europe"></i> World Maps</a>
-            <a href="index.html" class="w3-bar-item w3-button w3-padding w3-hover-amber"><i class="fas fa-pills"></i>
-                Line Chart </a>
-
+            <a href="datastorytelling.html" class="w3-bar-item w3-button w3-padding w3-hover-teal"><i
+                    class="fas fa-globe-europe"></i> Data Storytelling</a>
+            <a href="Linechart.html" class="w3-bar-item w3-button w3-padding w3-hover-amber"><i class="fas fa-chart-line"></i>
+                    Line Chart </a>
+            <a href="Overview.html" class="w3-bar-item w3-button w3-padding w3-hover-amber"><i class="fas fa-pills"></i>
+                    Data
+                    Overview</a>
             <!-- <a href="covidvaccinations.html" class="w3-bar-item w3-button w3-padding w3-hover-green"><i
                     class="fas fa-syringe"></i> Data Vaccinations</a>
             <a href="covidchartsdata.html" class="w3-bar-item w3-button w3-padding w3-hover-light-green"><i
@@ -51,71 +55,70 @@
     </nav>
     <!-- !PAGE CONTENT! -->
     <div class="w3-main main-custom">
-        <h3></br> </br> <center> COVID MAP </center></br>
+        <h3></br> </br>
+            <center> COVID MAP </center></br>
         </h3>
         <div class="myMap">
             <div class="map"></div>
         </div>
     </div>
 
-    < <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
-        </script>
-        <script src="https://unpkg.com/@popperjs/core@2"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/raphael@2.3.0/raphael.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/jquery-mousewheel@3.1.13/jquery.mousewheel.min.js"></script>
-        <script src="asset/mapael/jquery.mapael.js"></script>
-        <script src="asset/mapael/maps/world_countries.min.js"></script>
-        <script src="dataset-t.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/raphael@2.3.0/raphael.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-mousewheel@3.1.13/jquery.mousewheel.min.js"></script>
+    <script src="asset/mapael/jquery.mapael.js"></script>
+    <script src="asset/mapael/maps/world_countries.min.js"></script>
+    <script src="dataset-t.js"></script>
 
+    <script>
+        $.get("https://corona.lmao.ninja/v2/countries").then(function (countriesResp) {
+            const data = countriesResp;
 
+            var tablee = []
+            $.each(data, function (index) {
+                tablee[index] = {}
+                tablee[index]["code"] = data[index].countryInfo.iso2;
+                tablee[index]["name"] = data[index].country;
+                tablee[index]["cases"] = data[index].cases;
+                tablee[index]["deaths"] = data[index].deaths;
+                tablee[index]["recoveries"] = data[index].recovered;
+            })
+            var ob = procces(tablee);
+            myMap(ob);
+        });
 
-        <script>
-            $.get("https://corona.lmao.ninja/v2/countries").then(function (countriesResp) {
-                const data = countriesResp;
-
-                var tablee = []
-                $.each(data, function (index) {
-                    tablee[index] = {}
-                    tablee[index]["code"] = data[index].countryInfo.iso2;
-                    tablee[index]["name"] = data[index].country;
-                    tablee[index]["cases"] = data[index].cases;
-                    tablee[index]["deaths"] = data[index].deaths;
-                    tablee[index]["recoveries"] = data[index].recovered;
-                })
-                var ob = procces(tablee);
-                myMap(ob);
+        function myMap(data) {
+            var mymap = $(".myMap").mapael({
+                map: {
+                    name: "world_countries",
+                    defaultArea: {
+                        attrs: {
+                            stroke: "#fff",
+                            "stroke-width": 1
+                        }
+                    }
+                },
+                legend: {
+                    area: {
+                        display: true,
+                        title: "Territory of total confirmed cases",
+                        slices: data.case_legendAreaColors
+                    },
+                    plot: {
+                        display: true,
+                        title: "Region of total confirmed cases",
+                        slices: data.case_legendPlotColors
+                    }
+                },
+                plots: data.case_cityPlots,
+                areas: data.case_countryAreas
             });
-
-            function myMap(data) {
-                var mymap = $(".myMap").mapael({
-                    map: {
-                        name: "world_countries",
-                        defaultArea: {
-                            attrs: {
-                                stroke: "#fff",
-                                "stroke-width": 1
-                            }
-                        }
-                    },
-                    legend: {
-                        area: {
-                            display: true,
-                            title: "Territory of total confirmed cases",
-                            slices: data.case_legendAreaColors
-                        },
-                        plot: {
-                            display: true,
-                            title: "Region of total confirmed cases",
-                            slices: data.case_legendPlotColors
-                        }
-                    },
-                    plots: data.case_cityPlots,
-                    areas: data.case_countryAreas
-                });
-                return mymap;
-            };
-        </script>
+            return mymap;
+        };
+    </script>
 
 </body>
 
