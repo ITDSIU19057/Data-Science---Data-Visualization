@@ -1,31 +1,32 @@
-html,body,h1,h2,h3,h4,h5, p {font-family: "Open Sans", sans-serif; font-size: 0.95rem; color:#adb5bd}
+html,body,h1,h2,h3,h4,h5, p {font-family: "Open Sans", sans-serif; font-size: 1 rem; color:#574545}
 .navbar-custom {height:60px;z-index:4;background-color:#181b1e}
-.navbar-custom i {color:#e84a67}
-.bg-dashboard{background-color:#835f5f;}
+.navbar-custom i {color:#6589ee}
+/* .bg-dashboard{background-color:#835f5f;} */
+.bg-dashboard{background-color:rgba(145, 133, 133, 0.9);}
 .dashboardTitle {font-weight: bold;}
-.sidebar-custom {background-color:#ffffff;z-index:3;width:250px;}
-.main-custom {margin-left:250px;}
-.header-container {padding-top:22px}
-.dark-element{background-color:#212529; border: 1px solid #495057;}
-.dark-element-withfont{background-color:#212529; border: 1px solid #495057; color:#adb5bd}
-.dark-element-borderBottom{background-color:#212529; border-bottom: 1px solid #495057;}
+.sidebar-custom {background-color:#e4bdbd;z-index:3;width:200px;}
+.main-custom {margin-left:200px;}
+.header-container {padding-top:25px}
+.dark-element{background-color:#ecd4d4; border: 1px solid #495057;}
+.dark-element-withfont{background-color:#ffffff; border: 1px solid #495057; color:#adb5bd}
+.dark-element-borderBottom{background-color:#ffffff; border-bottom: 1px solid #495057;}
 
-.tabulator{background-color:#212529 !important;}
-.tabulator .tabulator-header {background-color:#212529 !important; border: 1px solid #495057; }
-.tabulator-col, .tabulator-sortable {background-color:#343a40 !important; }
-.tabulator-row .tabulator-cell {border-right: 1px solid #495057 !important;border-bottom: 1px solid #495057 !important; font-weight: normal;}
+.tabulator{background-color:#ffffff !important;}
+.tabulator .tabulator-header {background-color:#000000 !important; border: 1px solid #495057; }
+.tabulator-col, .tabulator-sortable {background-color:#cfcfcf !important; }
+.tabulator-row .tabulator-cell {border-right: 1px solid #dbe6f1 !important;border-bottom: 1px solid #495057 !important; font-weight: normal;}
 #covidTableFrance .tabulator-row .tabulator-cell{padding:0.65em !important;}
-#covTable .tabulator-row .tabulator-cell{padding:0.3em !important;}
+#covTable .tabulator-row .tabulator-cell{padding:0.3em !important; color: #0f1681;}
 #vaccinTable .tabulator-row .tabulator-cell{padding:0.65em !important;}
 #vaccinTable .tabulator-row .tabulator-cell .arrowUpDown {margin-right:0.2em !important; font-size: medium !important;}
-.tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-title {white-space: normal;}
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-title {color: #5f1818;}
 .tabulator-col .tabulator-sortable {height: 50px;}
-.tabulator .tabulator-header .tabulator-col {border-right: 1px solid #495057;}
-.tabulator .tabulator-header .tabulator-col.tabulator-sortable:hover{background-color:#212529 !important;}
-.tabulator-row {background-color:#212529 !important;}
-.tabulator-row.tabulator-selectable:hover{background-color:#181b1e !important;}
-.tabulator .tabulator-header .tabulator-col .tabulator-header-filter input {background-color:#212529 !important;}
-.tabulator .tabulator-footer {background-color:#212529 !important; border-top: 1px solid #495057;}
+.tabulator .tabulator-header .tabulator-col {border-right: 1px solid #ffffff;}
+.tabulator .tabulator-header .tabulator-col.tabulator-sortable:hover{background-color:#b98888 !important;}
+.tabulator-row {background-color:#f0e5e5ce !important;}
+.tabulator-row.tabulator-selectable:hover{background-color:#ffffff !important;}
+.tabulator .tabulator-header .tabulator-col .tabulator-header-filter input {background-color:#969696 !important;}
+.tabulator .tabulator-footer {background-color:#cfcfcf !important; border-top: 1px solid #495057;}
 
 .chartsBlock1 {width:100%;height:500px; margin: 0;padding: 0;}
 .chartsBlock2{width:100%;height:600px;margin: 0;padding: 0;}
@@ -35,6 +36,10 @@ html,body,h1,h2,h3,h4,h5, p {font-family: "Open Sans", sans-serif; font-size: 0.
 /* .btn:hover {background-color: #ffffff;} */
 #containerMap{width:100%;height:600px;margin:0;padding:0;}
 #containerGlobalMap{width:100%;height:600px;margin:0;padding:0;}
+#containerGlobalMap2{width:100%;height:600px;margin:0;padding:0;}
+#containerGlobalMap3{width:100%;height:600px;margin:0;padding:0;}
+#containerGlobalMap4{width:100%;height:600px;margin:0;padding:0;}
+#containerGlobalMap5{width:100%;height:600px;margin:0;padding:0;}
 #containerMapFrance{width:100%;height:600px;margin:0;padding:0;}
 
 #articles img {width:100%;max-width:400px}
